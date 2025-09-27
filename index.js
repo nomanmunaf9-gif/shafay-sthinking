@@ -1,8 +1,11 @@
-export default function Home() {
-  return (
-    <div className="p-6 text-center">
-      <h1 className="text-2xl font-bold">Shafay'Thinking</h1>
-      <p className="mt-4">Welcome! یہ فرنٹ اینڈ صحیح کام کر رہا ہے ✅</p>
-    </div>
-  );
-}
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.json({ message: "Shafay'Thinking Backend is running ✅" });
+});
+
+app.listen(4000, () => console.log('Backend running on port 4000'));
